@@ -1,0 +1,109 @@
+.info {
+  width: 100%;
+  max-width: 500px;
+  margin-top: 20px;
+}
+
+.info-button {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+
+  padding: 10px 16px;
+
+  width: 100%;
+
+  border: 1px solid var(--border);
+  border-radius: 8px;
+
+  background: transparent;
+  color: var(--text-h);
+
+  cursor: pointer;
+
+  font-size: 15px;
+}
+
+.arrow {
+  transition: transform 0.25s ease;
+}
+
+.arrow.rotate {
+  transform: rotate(180deg);
+}
+
+.info-text {
+  max-height: 0;
+
+  overflow: hidden;
+
+  opacity: 0;
+
+  transition:
+    max-height 0.3s ease,
+    opacity 0.2s ease;
+}
+
+.info-text.show {
+  max-height: 280px;
+  opacity: 1;
+}
+
+.info-text p {
+  margin: 12px 0 0;
+
+  padding: 14px;
+
+  border-radius: 8px;
+
+  background: var(--rules-bg);
+  color: var(--text);
+}
+
+.rules-list {
+  display: grid;
+
+  gap: 10px;
+
+  margin-top: 14px;
+
+  font-size: 13px;
+}
+
+.rules-list div {
+  display: flex;
+  align-items: center;
+
+  gap: 10px;
+}
+
+.rule-tile {
+  flex: 0 0 28px;
+
+  width: 28px;
+  height: 28px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  border-radius: 4px;
+
+  font-size: 13px;
+  font-weight: bold;
+
+  color: white;
+}
+
+.rule-tile.correct {
+  background-color: #538d4e;
+}
+
+.rule-tile.present {
+  background-color: #b59f3b;
+}
+
+.rule-tile.absent {
+  background-color: #3a3a3c;
+}
