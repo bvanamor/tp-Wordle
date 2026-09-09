@@ -6,6 +6,7 @@ import {
 import Board from "./components/Board";
 import Keyboard from "./components/Keyboard";
 import Title from "./components/Title";
+import Regle from "./components/Regle";
 
 import {
   TARGET_WORD,
@@ -53,6 +54,7 @@ function App() {
     const usedTargetIndexes =
       new Set<number>();
 
+
     for (
       let i = 0;
       i < WORD_LENGTH;
@@ -68,6 +70,7 @@ function App() {
       }
     }
 
+    
     for (
       let i = 0;
       i < WORD_LENGTH;
@@ -159,6 +162,7 @@ function App() {
       return;
     }
 
+    
     if (
       key === "BACKSPACE"
     ) {
@@ -170,6 +174,7 @@ function App() {
       return;
     }
 
+    
     if (key === "ENTER") {
       if (
         currentWord.length !==
@@ -204,6 +209,7 @@ function App() {
 
       setCurrentWord("");
 
+      
       if (
         currentWord ===
         TARGET_WORD
@@ -215,6 +221,7 @@ function App() {
         return;
       }
 
+      
       if (
         newGuesses.length >=
         MAX_ATTEMPTS
@@ -225,6 +232,7 @@ function App() {
       return;
     }
 
+    
     if (
       currentWord.length >=
       WORD_LENGTH
@@ -238,6 +246,7 @@ function App() {
     );
   }
 
+  
   useEffect(() => {
     function handlePhysicalKeyboard(
       event: KeyboardEvent
@@ -311,6 +320,9 @@ function App() {
         keyStatuses={keyStatuses}
       />
 
+      
+      <Regle />
+
       {gameOver && (
         <div className="game-result">
 
@@ -343,9 +355,7 @@ function App() {
           <button
             type="button"
             className="restart-button"
-            onClick={
-              restartGame
-            }
+            onClick={restartGame}
           >
             Recommencer
           </button>
