@@ -317,7 +317,7 @@ function App() {
           {won ? (
             <>
               <h2>
-                🎉 Bravo !
+                 Bravo !
               </h2>
 
               <p>
